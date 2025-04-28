@@ -12,18 +12,25 @@
     body {
       margin: 0;
       padding: 0;
-      background: #f0f4f8;
+      min-height: 100vh;
+      width: 100vw;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      /* Travel background image with overlay */
+      background: 
+        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+        url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
     }
 
     .container {
-      background: #fff;
+      background: rgba(255,255,255,0.15);
+      box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.18);
       padding: 40px 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
       width: 100%;
       max-width: 400px;
       position: relative;
@@ -33,7 +40,8 @@
     h2 {
       text-align: center;
       margin-bottom: 24px;
-      color: #333;
+      color: #fff;
+      text-shadow: 1px 1px 8px rgba(0,0,0,0.4);
     }
 
     form {
@@ -50,6 +58,9 @@
       padding: 11px;
       border: 1px solid #ccc;
       border-radius: 4px;
+      background: rgba(255,255,255,0.7);
+      color: #222;
+      font-size: 15px;
     }
 
     button {
@@ -60,6 +71,9 @@
       color: white;
       font-weight: bold;
       cursor: pointer;
+      font-size: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      transition: background 0.3s;
     }
 
     button:hover {
@@ -70,12 +84,15 @@
       margin-top: 15px;
       text-align: center;
       font-size: 13px;
+      color: #fff;
+      text-shadow: 1px 1px 8px rgba(0,0,0,0.4);
     }
 
     .toggle a {
-      color: #0077cc;
+      color: #ffd700;
       cursor: pointer;
       text-decoration: none;
+      font-weight: bold;
     }
 
     .toggle a:hover {

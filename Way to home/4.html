@@ -4,194 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travel Comparison</title>
-    <style>
-        body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-    background-image: url("10466375.jpg"); /* Replace with your image path */
-    background-size: cover; /* Cover the entire viewport */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Prevent repeating the image */
-}
-        header {
-    background-color: #007bff;
-    color: white;
-    padding: 15px 0;
-}
-
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 80%;
-    margin: 0 auto;
-}
-
-.logo h1 {
-    margin: 0;
-    font-size: 24px;
-}
-
-.navigation ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 20px;
-}
-
-.navigation a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-.navigation a:hover {
-    color: #ffc107;
-}
-
-.search-bar {
-    display: flex;
-    gap: 10px;
-}
-
-.search-bar input {
-    padding: 8px;
-    border: none;
-    border-radius: 4px;
-}
-
-.search-bar button {
-    padding: 8px 15px;
-    border: none;
-    border-radius: 4px;
-    background-color: #ffc107;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.search-bar button:hover {
-    background-color: #e0a800;
-}
-        body {
-            font-family: sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            color: #ddd;
-            width: 80%;
-            margin: 20px auto;
-        }
-
-        .search-form {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .search-form input, .search-form select, .search-form button {
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        .results-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .result-card {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 15px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .result-card h3 {
-            margin-top: 0;
-        }
-
-        .result-card .price {
-            font-weight: bold;
-            color: #007bff;
-        }
-
-        .result-card .rating {
-            color: #ffc107;
-        }
-        .result-card button {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        html, body {
-    height: 100%;
-    margin: 0;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-}
-
-footer {
-    background-color: #007bff;
-    color: white;
-    /*padding: 10px 0;Reduced padding */
-    text-align: center;
-    margin-top: auto; /* Pushes footer to the bottom */
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center; /* Center items vertically */
-    flex-wrap: wrap;
-    width: 60%;
-    margin: 0 auto;
-}
-
-.footer-links, .social-media {
-    margin: 5px; /* Reduced margin */
-}
-
-.footer-links h3, .social-media h3 {
-    margin-bottom: 5px; /* Reduced margin */
-    font-size: 16px; /* Reduced font size */
-}
-
-.footer-links ul, .social-media ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.footer-links a, .social-media a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s;
-    font-size: 14px; /* Reduced font size */
-}
-
-.footer-links a:hover, .social-media a:hover {
-    color: #ffc107;
-}
-
-.copyright {
-    margin-top: 10px; /* Reduced margin */
-    font-size: 12px; /* Reduced font size */
-}
-    </style>
+    <link rel="stylesheet" href="project.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -232,31 +46,23 @@ footer {
         <div class="results-container" id="results">
             </div>
     </div>
-    <footer>
-        <div class="footer-container">
-            <div class="footer-links">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-            <div class="social-media">
-                <h3>Follow Us</h3>
-                <ul>
-                    <li><a href="https://facebook.com" target="_blank">Facebook</a></li>
-                    <li><a href="https://twitter.com" target="_blank">Twitter</a></li>
-                    <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
-                    <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
-                </ul>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2025 Way to home. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+                <footer>
+                    <div class="footer-container">
+                        <div class="footer-content">
+                            <a href="#home">Home</a>
+                            <a href="#about">About</a>
+                            <a href="#services">Services</a>
+                            <a href="#contact">Contact</a>
+                            <span class="separator">|</span>
+                            <a href="https://facebook.com" target="_blank">Facebook</a>
+                            <a href="https://twitter.com" target="_blank">Twitter</a>
+                            <a href="https://instagram.com" target="_blank">Instagram</a>
+                        </div>
+                        <div class="copyright">
+                            <small>&copy; 2025 Way to home</small>
+                        </div>
+                    </div>
+                </footer>
 
     
 
@@ -269,25 +75,94 @@ footer {
             const resultsDiv = document.getElementById('results');
             resultsDiv.innerHTML = ''; // Clear previous results
 
-            // Simulate fetching data (replace with actual API calls)
-            const simulatedResults = [
-                { provider: 'Provider A', price: '$50', rating: '4.5', reliability: 'High', link: 'https://example.com/providerA' },
-                { provider: 'Provider B', price: '$60', rating: '4.0', reliability: 'Medium', link: 'https://example.com/providerB' },
-                { provider: 'Provider C', price: '$45', rating: '4.8', reliability: 'High', link: 'https://example.com/providerC' }
-            ];
+            // Simulated data for each mode (prices in rupees)
+            const travelData = {
+                bus: [
+                    { provider: 'RedBus', price: 300, rating: '4.2', reliability: 'High', link: '#' },
+                    { provider: 'Paytm Bus', price: 280, rating: '4.0', reliability: 'Medium', link: '#' }
+                ],
+                train: [
+                    { provider: 'IRCTC', price: 200, rating: '4.5', reliability: 'High', link: '#' },
+                    { provider: 'Yatra Train', price: 220, rating: '4.1', reliability: 'Medium', link: '#' }
+                ],
+                flight: [
+                    { provider: 'IndiGo', price: 1200, rating: '4.7', reliability: 'High', link: '#' },
+                    { provider: 'Air India', price: 1100, rating: '4.3', reliability: 'Medium', link: '#' }
+                ]
+            };
 
-            simulatedResults.forEach(result => {
-                const card = document.createElement('div');
-                card.className = 'result-card';
-                card.innerHTML = `
-                    <h3>${result.provider}</h3>
-                    <p class="price">${result.price}</p>
-                    <p class="rating">Rating: ${result.rating}</p>
-                    <p>Reliability: ${result.reliability}</p>
-                    <button onclick="window.location.href='${result.link}'">Book Now</button>
+            // Gather results based on selected mode
+            let results = [];
+            if (mode === 'all') {
+                Object.keys(travelData).forEach(m => {
+                    results = results.concat(travelData[m].map(r => ({ ...r, mode: m })));
+                });
+            } else {
+                results = travelData[mode].map(r => ({ ...r, mode }));
+            }
+
+            // Sort by price (ascending)
+            results.sort((a, b) => a.price - b.price);
+
+            // Create a transparent comparison table
+            let tableHTML = `
+                <h2 style="color:#fff;text-align:center;">Price Comparison</h2>
+                <table style="
+                    width:100%;
+                    background:rgba(255,255,255,0.15);
+                    color:#fff;
+                    border-radius:15px;
+                    overflow:hidden;
+                    box-shadow:0 8px 32px 0 rgba(31,38,135,0.37);
+                    backdrop-filter: blur(8px);
+                    border-collapse: separate;
+                    border-spacing: 0;
+                    margin-bottom: 20px;
+                ">
+                    <thead>
+                        <tr style="background:rgba(0,0,0,0.25);">
+                            <th style="padding:12px;">Mode</th>
+                            <th style="padding:12px;">Provider</th>
+                            <th style="padding:12px;">Price (₹)</th>
+                            <th style="padding:12px;">Rating</th>
+                            <th style="padding:12px;">Reliability</th>
+                            <th style="padding:12px;">Book</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+            results.forEach(result => {
+                tableHTML += `
+                    <tr style="background:rgba(255,255,255,0.10);">
+                        <td style="text-transform:capitalize; padding:10px;">${result.mode}</td>
+                        <td style="padding:10px;">${result.provider}</td>
+                        <td style="padding:10px;">₹${result.price}</td>
+                        <td style="padding:10px;">${result.rating}</td>
+                        <td style="padding:10px;">${result.reliability}</td>
+                        <td style="padding:10px;">
+                            <button style="
+                                background:rgba(255,107,107,0.8);
+                                color:#fff;
+                                border:none;
+                                border-radius:20px;
+                                padding:8px 18px;
+                                cursor:pointer;
+                                font-weight:600;
+                                transition:background 0.3s;
+                            " 
+                            onmouseover="this.style.background='rgba(255,135,135,0.9)'"
+                            onmouseout="this.style.background='rgba(255,107,107,0.8)'"
+                            onclick="window.location.href='${result.link}'">Book Now</button>
+                        </td>
+                    </tr>
                 `;
-                resultsDiv.appendChild(card);
             });
+            tableHTML += `
+                    </tbody>
+                </table>
+            `;
+
+            resultsDiv.innerHTML = tableHTML;
         }
     </script>
 </body>

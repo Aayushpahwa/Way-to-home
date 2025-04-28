@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelEase - Your Travel Booking Partner</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">TravelEase</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" class="active"><i class="fas fa-bed"></i> Stays</a></li>
+                    <li><a href="#"><i class="fas fa-plane"></i> Flights</a></li>
+                    <li><a href="#"><i class="fas fa-car"></i> Car Rentals</a></li>
+                    <li><a href="#"><i class="fas fa-monument"></i> Attractions</a></li>
+                    <li><a href="#"><i class="fas fa-taxi"></i> Airport Taxis</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="#" class="btn btn-outline">List your property</a>
+                <a href="#" class="btn">Register</a>
+                <a href="#" class="btn">Sign in</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Find your next stay</h1>
+            <p>Search deals on hotels, homes, and much more...</p>
+            
+            <!-- Search Form -->
+            <div class="search-container">
+                <form class="search-form">
+                    <div class="form-group">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <input type="text" placeholder="Where are you going?">
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-calendar-alt"></i>
+                        <input type="text" placeholder="Check-in — Check-out">
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="2 adults · 0 children · 1 room">
+                    </div>
+                    <button type="submit" class="search-btn">Search</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offers Section -->
+    <section class="offers">
+        <div class="container">
+            <h2>Offers</h2>
+            <p>Promotions, deals, and special offers for you</p>
+            
+            <div class="offers-grid">
+                <div class="offer-card">
+                    <div class="offer-content">
+                        <h3>Escape for a while</h3>
+                        <p>Enjoy the freedom of a monthly stay on TravelEase</p>
+                        <a href="#" class="btn">Find monthly stays</a>
+                    </div>
+                    <div class="offer-image">
+                        <img src="https://via.placeholder.com/300x200" alt="Monthly stays">
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-content">
+                        <h3>Save 15% with Late Escape Deals</h3>
+                        <p>Explore thousands of destinations worldwide</p>
+                        <a href="#" class="btn">Find Late Escape Deals</a>
+                    </div>
+                    <div class="offer-image">
+                        <img src="https://via.placeholder.com/300x200" alt="Escape deals">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinations Section -->
+    <section class="destinations">
+        <div class="container">
+            <h2>Explore Popular Destinations</h2>
+            
+            <div class="destinations-grid">
+                <div class="destination-card">
+                    <img src="https://via.placeholder.com/300x300" alt="New York">
+                    <div class="destination-info">
+                        <h3>New York</h3>
+                        <p>5,432 properties</p>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <img src="https://via.placeholder.com/300x300" alt="London">
+                    <div class="destination-info">
+                        <h3>London</h3>
+                        <p>4,378 properties</p>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <img src="https://via.placeholder.com/300x300" alt="Paris">
+                    <div class="destination-info">
+                        <h3>Paris</h3>
+                        <p>3,982 properties</p>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <img src="https://via.placeholder.com/300x300" alt="Tokyo">
+                    <div class="destination-info">
+                        <h3>Tokyo</h3>
+                        <p>3,465 properties</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Local Pulse Section -->
+    <section class="local-pulse">
+        <div class="container">
+            <div class="local-pulse-header">
+                <h2><i class="fas fa-heartbeat"></i>Local Pulse</h2>
+                <div class="vibe-filters">
+                    <div class="vibe-filter active">All</div>
+                    <div class="vibe-filter">Chill</div>
+                    <div class="vibe-filter">Party</div>
+                    <div class="vibe-filter">Romantic</div>
+                    <div class="vibe-filter">Adventure</div>
+                    <div class="vibe-filter">Cultural</div>
+                </div>
+            </div>
+            
+            <div class="local-pulse-grid">
+                <!-- Weather & Mood Widget -->
+                <div class="pulse-card">
+                    <div class="pulse-card-header">
+                        <div class="pulse-card-title">
+                            <i class="fas fa-cloud-sun"></i> Weather & Mood
+                        </div>
+                    </div>
+                    <div class="pulse-card-content">
+                        <div class="weather-widget">
+                            <div class="weather-icon">
+                                <i class="fas fa-sun"></i>
+                            </div>
+                            <div class="weather-details">
+                                <h3>28°C</h3>
+                                <div class="weather-forecast">Sunny, Clear Skies</div>
+                            </div>
+                        </div>
+                        <div class="weather-mood">
+                            Perfect sunny day for walking tours and enjoying outdoor cafés! The warm weather makes it ideal for exploring the city on foot.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Events & Festivals Widget -->
+                <div class="pulse-card">
+                    <div class="pulse-card-header">
+                        <div class="pulse-card-title">
+                            <i class="fas fa-calendar-alt"></i> Events & Festivals
+                        </div>
+                    </div>
+                    <div class="pulse-card-content">
+                        <div class="events-list">
+                            <div class="event-item">
+                                <div class="event-title">Jazz in the Park Festival</div>
+                                <div class="event-time">Today, 5:00 PM - 10:00 PM</div>
+                                <div class="event-description">Live jazz performances at Central Park with food stalls and craft beer.</div>
+                                <span class="event-badge popular">Popular</span>
+                            </div>
+                            <div class="event-item">
+                                <div class="event-title">Modern Art Exhibition</div>
+                                <div class="event-time">Tomorrow, 10:00 AM - 8:00 PM</div>
+                                <div class="event-description">Contemporary art showcase featuring local and international artists.</div>
+                                <span class="event-badge">Niche</span>
+                            </div>
+                            <div class="event-item">
+                                <div class="event-title">Street Food Festival</div>
+                                <div class="event-time">Saturday, 12:00 PM - 9:00 PM</div>
+                                <div class="event-description">Taste global cuisines from over 50 vendors in Downtown.</div>
+                                <span class="event-badge popular">Popular</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Vibe Meter Widget -->
+                <div class="pulse-card">
+                    <div class="pulse-card-header">
+                        <div class="pulse-card-title">
+                            <i class="fas fa-smile"></i> Vibe Meter
+                        </div>
+                    </div>
+                    <div class="pulse-card-content">
+                        <div class="vibe-meter">
+                            <div class="sentiment-score">
+                                <span style="font-size: 24px;">🟢</span>
+                                <span class="sentiment-label positive">Positive (87/100)</span>
+                            </div>
+                            <div class="sentiment-summary">
+                                Locals are excited about the Jazz Festival this weekend. Many are sharing their plans to attend and recommendations for best viewing spots.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Crowd Density Widget -->
+                <div class="pulse-card">
+                    <div class="pulse-card-header">
+                        <div class="pulse-card-title">
+                            <i class="fas fa-users"></i> Crowd Density
+                        </div>
+                    </div>
+                    <div class="pulse-card-content">
+                        <div class="crowd-density">
+                            <h4>Current City Activity Level</h4>
+                            <div class="density-meter">
+                                <div class="density-level" style="width: 65%;"></div>
+                            </div>
+                            <div class="density-status">
+                                <span>Low</span>
+                                <span>Moderate</span>
+                                <span>High</span>
+                            </div>
+                            <div class="crowd-areas">
+                                <div class="crowd-area">
+                                    <span>Downtown</span>
+                                    <span class="crowd-level medium">Moderate</span>
+                                </div>
+                                <div class="crowd-area">
+                                    <span>Tourist District</span>
+                                    <span class="crowd-level high">High</span>
+                                </div>
+                                <div class="crowd-area">
+                                    <span>Beaches</span>
+                                    <span class="crowd-level high">High</span>
+                                </div>
+                                <div class="crowd-area">
+                                    <span>Shopping Areas</span>
+                                    <span class="crowd-level medium">Moderate</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- News Pulse Widget -->
+                <div class="pulse-card">
+                    <div class="pulse-card-header">
+                        <div class="pulse-card-title">
+                            <i class="fas fa-newspaper"></i> News Pulse
+                        </div>
+                    </div>
+                    <div class="pulse-card-content">
+                        <div class="news-list">
+                            <div class="news-item">
+                                <div class="news-title">City Museum to Extend Summer Hours</div>
+                                <div class="news-source">Local News Network • 2 hours ago</div>
+                            </div>
+                            <div class="news-item">
+                                <div class="news-title">Transit Workers Planning Strike Next Week</div>
+                                <div class="news-source">City Daily • 5 hours ago</div>
+                                <span class="news-alert">Travel Alert</span>
+                            </div>
+                            <div class="news-item">
+                                <div class="news-title">New Rooftop Restaurant Opens in Downtown</div>
+                                <div class="news-source">Food & Travel Blog • 1 day ago</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Trending Music Widget -->
+                <div class="pulse-card">
+                    <div class="pulse-card-header">
+                        <div class="pulse-card-title">
+                            <i class="fas fa-music"></i> Trending Music
+                        </div>
+                    </div>
+                    <div class="pulse-card-content">
+                        <div class="trending-list">
+                            <div class="trending-item">
+                                <div class="trending-rank">1</div>
+                                <div class="trending-details">
+                                    <div class="trending-title">Summer Feels</div>
+                                    <div class="trending-artist">DJ Sunshine</div>
+                                </div>
+                                <div class="trending-play">
+                                    <i class="fas fa-play-circle"></i>
+                                </div>
+                            </div>
+                            <div class="trending-item">
+                                <div class="trending-rank">2</div>
+                                <div class="trending-details">
+                                    <div class="trending-title">City Lights</div>
+                                    <div class="trending-artist">Urban Beats</div>
+                                </div>
+                                <div class="trending-play">
+                                    <i class="fas fa-play-circle"></i>
+                                </div>
+                            </div>
+                            <div class="trending-item">
+                                <div class="trending-rank">3</div>
+                                <div class="trending-details">
+                                    <div class="trending-title">Beach Vibes</div>
+                                    <div class="trending-artist">Coastal Waves</div>
+                                </div>
+                                <div class="trending-play">
+                                    <i class="fas fa-play-circle"></i>
+                                </div>
+                            </div>
+                            <div class="trending-item">
+                                <div class="trending-rank">4</div>
+                                <div class="trending-details">
+                                    <div class="trending-title">Local Flavor</div>
+                                    <div class="trending-artist">The Natives</div>
+                                </div>
+                                <div class="trending-play">
+                                    <i class="fas fa-play-circle"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Local Tip Widget -->
+                <div class="pulse-card">
+                    <div class="pulse-card-header">
+                        <div class="pulse-card-title">
+                            <i class="fas fa-lightbulb"></i> Local Tip of the Day
+                        </div>
+                    </div>
+                    <div class="pulse-card-content">
+                        <div class="local-tip">
+                            <div class="local-tip-header">
+                                <i class="fas fa-quote-left"></i>
+                                <h4>Insider Knowledge</h4>
+                            </div>
+                            <div class="local-tip-content">
+                                Skip the regular tourist spots today and head to the north side of the beach before sunset. The local musicians gather there for impromptu jam sessions, and you can enjoy the best view of the sunset away from the crowds.
+                            </div>
+                            <div class="local-tip-author">
+                                — Maria, local guide for 7 years
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Compare Cities Section -->
+            <div class="compare-cities">
+                <div class="city-comparison-header">
+                    <h3>Compare Cities by Vibe</h3>
+                    <a href="#" class="btn btn-outline">View All Comparisons</a>
+                </div>
+                <div class="city-comparison-grid">
+                    <div class="city-vibe-card">
+                        <div class="city-name">New York</div>
+                        <div class="vibe-category">
+                            <span>Party Atmosphere</span>
+                            <span class="vibe-score">8.5/10</span>
+                        </div>
+                        <div class="vibe-category">
+                            <span>Cultural Experience</span>
+                            <span class="vibe-score">9.2/10</span>
+                        </div>
+                        <div class="vibe-category">
+                            <span>Relaxation</span>
+                            <span class="vibe-score">6.3/10</span>
+                        </div>
+                        <div class="vibe-category">
+                            <span>Romance</span>
+                            <span class="vibe-score">7.8/10</span>
+                        </div>
+                    </div>
+                    <div class="city-vibe-card">
+                        <div class="city-name">Paris</div>
+                        <div class="vibe-category">
+                            <span>Party Atmosphere</span>
+                            <span class="vibe-score">7.9/10</span>
+                        </div>
+                        <div class="vibe-category">
+                            <span>Cultural Experience</span>
+                            <span class="vibe-score">9.7/10</span>
+                        </div>
+                        <div class="vibe-category">
+                            <span>Relaxation</span>
+                            <span class="vibe-score">7.5/10</span>
+                        </div>
+                        <div class="vibe-category">
+                            <span>Romance</span>
+                            <span class="vibe-score">9.5/10</span>
+                        </div>
+                    </div>
+                    <div class="city-vibe-card">
+                        <div class="city-name">Tokyo</div>
+                        <div class="vibe-category">
+                            <span>Party Atmosphere</span>
+                            <span class="vibe-score">8.8/10</span>
+                        </div>
+                        <div class="vibe-category">
+                            <span>Cultural Experience</span>
+                            <span class="vibe-score">9.3/10</span>
+                        </div>
+                        <div class="vibe-category">
+                            <span>Relaxation</span>
+                            <span class="vibe-score">6.7/10</span>
+                        </div>
+                        <div class="vibe-category">
+                            <span>Romance</span>
+                            <span class="vibe-score">7.6/10</span>
+                        </div>
+                    </div>
+                    <div class="city-vibe-card">
+                        <div class="city-name">Bali</div>
+                        <div class="vibe-category">
+                            <span>Party Atmosphere</span>
+                            <span class="vibe-score">8.0/10</span>
+                        </div>
+                        <div class="vibe-category">
+                            <span>Cultural Experience</span>
+                            <span class="vibe-score">8.9/10</span>
+                        </div>
+                        <div class="vibe-category">
+                            <span>Relaxation</span>
+                            <span class="vibe-score">9.6/10</span>
+                        </div>
+                        <div class="vibe-category">
+                            <span>Romance</span>
+                            <span class="vibe-score">9.2/10</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Subscribe to Pulse Alerts -->
+            <div class="subscribe-pulse">
+                <div class="subscribe-box">
+                    <h3>Subscribe to Pulse Alerts</h3>
+                    <p>Get notified when a city matches your desired vibe</p>
+                    <div class="subscribe-form">
+                        <input type="email" placeholder="Your email address">
+                        <select>
+                            <option>Choose your preferred vibe</option>
+                            <option>Party Atmosphere</option>
+                            <option>Cultural Experience</option>
+                            <option>Relaxation</option>
+                            <option>Romance</option>
+                            <option>Adventure</option>
+                        </select>
+                        <button class="btn">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Property Types Section -->
+    <section class="property-types">
+        <div class="container">
+            <h2>Browse by property type</h2>
+            
+            <div class="property-types-grid">
+                <div class="property-type-card">
+                    <img src="https://via.placeholder.com/200x200" alt="Hotels">
+                    <h3>Hotels</h3>
+                    <p>957,352 hotels</p>
+                </div>
+                <div class="property-type-card">
+                    <img src="https://via.placeholder.com/200x200" alt="Apartments">
+                    <h3>Apartments</h3>
+                    <p>875,624 apartments</p>
+                </div>
+                <div class="property-type-card">
+                    <img src="https://via.placeholder.com/200x200" alt="Resorts">
+                    <h3>Resorts</h3>
+                    <p>18,765 resorts</p>
+                </div>
+                <div class="property-type-card">
+                    <img src="https://via.placeholder.com/200x200" alt="Villas">
+                    <h3>Villas</h3>
+                    <p>494,252 villas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Section -->
+    <section class="featured">
+        <div class="container">
+            <h2>Featured properties</h2>
+            
+            <div class="featured-grid">
+                <div class="featured-card">
+                    <div class="featured-image">
+                        <img src="https://via.placeholder.com/300x200" alt="Featured Hotel">
+                        <span class="rating">9.2</span>
+                    </div>
+                    <div class="featured-content">
+                        <h3>Grand Hotel</h3>
+                        <p class="location">New York, USA</p>
+                        <p class="price">Starting from <span>$120</span></p>
+                        <div class="reviews">
+                            <span class="rating-text">Excellent</span>
+                            <span class="review-count">2,456 reviews</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="featured-card">
+                    <div class="featured-image">
+                        <img src="https://via.placeholder.com/300x200" alt="Featured Hotel">
+                        <span class="rating">8.9</span>
+                    </div>
+                    <div class="featured-content">
+                        <h3>Luxury Suites</h3>
+                        <p class="location">Paris, France</p>
+                        <p class="price">Starting from <span>$180</span></p>
+                        <div class="reviews">
+                            <span class="rating-text">Very Good</span>
+                            <span class="review-count">1,872 reviews</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="featured-card">
+                    <div class="featured-image">
+                        <img src="https://via.placeholder.com/300x200" alt="Featured Hotel">
+                        <span class="rating">9.5</span>
+                    </div>
+                    <div class="featured-content">
+                        <h3>Beachside Resort</h3>
+                        <p class="location">Bali, Indonesia</p>
+                        <p class="price">Starting from <span>$95</span></p>
+                        <div class="reviews">
+                            <span class="rating-text">Exceptional</span>
+                            <span class="review-count">3,210 reviews</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Save time, save money!</h2>
+            <p>Sign up and we'll send the best deals to you</p>
+            <div class="newsletter-form">
+                <input type="email" placeholder="Your email address">
+                <button type="submit" class="btn">Subscribe</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>About</h3>
+                    <ul>
+                        <li><a href="#">How we work</a></li>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Investor relations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Help</h3>
+                    <ul>
+                        <li><a href="#">Support Center</a></li>
+                        <li><a href="#">Safety Resource Center</a></li>
+                        <li><a href="#">Cancellation options</a></li>
+                        <li><a href="#">COVID-19 response</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Partners</h3>
+                    <ul>
+                        <li><a href="#">Partner with us</a></li>
+                        <li><a href="#">Advertise with us</a></li>
+                        <li><a href="#">Affiliates</a></li>
+                        <li><a href="#">Partner hub</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Apps</h3>
+                    <ul>
+                        <li><a href="#">iOS App</a></li>
+                        <li><a href="#">Android App</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                Copyright &copy; 2023 TravelEase. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html> 

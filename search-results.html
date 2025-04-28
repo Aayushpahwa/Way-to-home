@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results - TravelEase</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Additional styles for search results page */
+        .search-results {
+            background-color: #f5f5f5;
+            padding: 40px 0;
+        }
+        
+        .search-results-container {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .filters {
+            width: 280px;
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            align-self: flex-start;
+            position: sticky;
+            top: 90px;
+        }
+        
+        .filters h3 {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .filter-group {
+            margin-bottom: 20px;
+        }
+        
+        .filter-group h4 {
+            margin-bottom: 10px;
+        }
+        
+        .checkbox-group {
+            margin-bottom: 5px;
+        }
+        
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .checkbox-group input {
+            margin-right: 10px;
+        }
+        
+        .price-slider {
+            width: 100%;
+            margin: 10px 0;
+        }
+        
+        .properties-list {
+            flex: 1;
+        }
+        
+        .property-card {
+            display: flex;
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        
+        .property-image {
+            width: 300px;
+            flex-shrink: 0;
+            position: relative;
+        }
+        
+        .property-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .property-image .rating {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #003580;
+            color: #fff;
+            padding: 6px 10px;
+            border-radius: 5px 5px 5px 0;
+            font-weight: bold;
+        }
+        
+        .property-details {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .property-title {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .property-title h3 {
+            color: #0071c2;
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+        
+        .property-location {
+            color: #666;
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .property-location i {
+            margin-right: 5px;
+            color: #0071c2;
+        }
+        
+        .property-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .feature {
+            background-color: #ebf3ff;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #0071c2;
+        }
+        
+        .property-description {
+            flex: 1;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .property-price {
+            align-self: flex-end;
+            text-align: right;
+        }
+        
+        .property-price .price {
+            font-size: 22px;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 5px;
+        }
+        
+        .property-price .includes {
+            color: #008009;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        .sorting {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .sorting select {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            outline: none;
+        }
+        
+        .results-count {
+            color: #666;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .pagination a {
+            display: inline-block;
+            padding: 8px 16px;
+            margin: 0 5px;
+            border-radius: 4px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            color: #0071c2;
+        }
+        
+        .pagination a.active {
+            background-color: #0071c2;
+            color: #fff;
+            border-color: #0071c2;
+        }
+        
+        .pagination a:hover:not(.active) {
+            background-color: #f5f5f5;
+        }
+        
+        .availability {
+            margin-top: 10px;
+            color: #d83b01;
+            font-weight: bold;
+        }
+        
+        .search-summary {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .search-summary-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .search-info span {
+            font-weight: bold;
+        }
+        
+        .modify-search {
+            color: #0071c2;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 992px) {
+            .search-results-container {
+                flex-direction: column;
+            }
+            
+            .filters {
+                width: 100%;
+                position: static;
+                margin-bottom: 20px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .property-card {
+                flex-direction: column;
+            }
+            
+            .property-image {
+                width: 100%;
+                height: 200px;
+            }
+            
+            .property-title {
+                flex-direction: column;
+            }
+            
+            .property-price {
+                align-self: flex-start;
+                text-align: left;
+                margin-top: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">TravelEase</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" class="active"><i class="fas fa-bed"></i> Stays</a></li>
+                    <li><a href="#"><i class="fas fa-plane"></i> Flights</a></li>
+                    <li><a href="#"><i class="fas fa-car"></i> Car Rentals</a></li>
+                    <li><a href="#"><i class="fas fa-monument"></i> Attractions</a></li>
+                    <li><a href="#"><i class="fas fa-taxi"></i> Airport Taxis</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="#" class="btn btn-outline">List your property</a>
+                <a href="#" class="btn">Register</a>
+                <a href="#" class="btn">Sign in</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Results Section -->
+    <section class="search-results">
+        <div class="container">
+            <div class="search-summary">
+                <div class="search-summary-content">
+                    <div class="search-info">
+                        <h2>Paris: 843 properties found</h2>
+                        <p>May 15-18, 2023 · 2 adults · 1 room</p>
+                    </div>
+                    <div class="modify-search">
+                        Modify search
+                    </div>
+                </div>
+            </div>
+            
+            <div class="search-results-container">
+                <!-- Filters -->
+                <div class="filters">
+                    <h3>Filter by:</h3>
+                    
+                    <div class="filter-group">
+                        <h4>Your budget (per night)</h4>
+                        <input type="range" min="0" max="500" value="250" class="price-slider" id="priceRange">
+                        <p>$0 - $<span id="priceValue">250</span></p>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h4>Star rating</h4>
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox"> 5 stars
+                            </label>
+                        </div>
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox"> 4 stars
+                            </label>
+                        </div>
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox"> 3 stars
+                            </label>
+                        </div>
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox"> 2 stars
+                            </label>
+                        </div>
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox"> 1 star
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h4>Property type</h4>
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox"> Hotels
+                            </label>
+                        </div>
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox"> Apartments
+                            </label>
+                        </div>
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox"> Hostels
+                            </label>
+                        </div>
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox"> Guest houses
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h4>Facilities</h4>
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox"> Free WiFi
+                            </label>
+                        </div>
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox"> Breakfast included
+                            </label>
+                        </div>
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox"> Pool
+                            </label>
+                        </div>
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox"> Free parking
+                            </label>
+                        </div>
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox"> Air conditioning
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Properties list -->
+                <div class="properties-list">
+                    <div class="sorting">
+                        <div class="results-count">
+                            <p>843 properties found</p>
+                        </div>
+                        <div class="sort-options">
+                            <label for="sort">Sort by:</label>
+                            <select id="sort">
+                                <option>Our top picks</option>
+                                <option>Lowest price first</option>
+                                <option>Best reviewed first</option>
+                                <option>Star rating (highest first)</option>
+                                <option>Star rating (lowest first)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!-- Property cards -->
+                    <div class="property-card">
+                        <div class="property-image">
+                            <img src="https://via.placeholder.com/300x200" alt="Hotel Paris">
+                            <span class="rating">9.2</span>
+                        </div>
+                        <div class="property-details">
+                            <div class="property-title">
+                                <div>
+                                    <h3>Grand Hôtel Paris</h3>
+                                    <div class="property-location">
+                                        <i class="fas fa-map-marker-alt"></i> Central Paris, 0.5 miles from center
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="property-features">
+                                <span class="feature">Free WiFi</span>
+                                <span class="feature">Breakfast included</span>
+                                <span class="feature">Non-smoking rooms</span>
+                                <span class="feature">Restaurant</span>
+                            </div>
+                            <div class="property-description">
+                                <p>Experience the elegance of this boutique hotel in the heart of Paris. Just a short walk from major attractions like the Louvre Museum and Notre Dame Cathedral.</p>
+                            </div>
+                            <div class="property-price">
+                                <div class="price">$215</div>
+                                <div class="includes">Includes taxes and fees</div>
+                                <a href="#" class="btn">See availability</a>
+                                <div class="availability">Only 2 rooms left!</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="property-card">
+                        <div class="property-image">
+                            <img src="https://via.placeholder.com/300x200" alt="Apartment Paris">
+                            <span class="rating">8.7</span>
+                        </div>
+                        <div class="property-details">
+                            <div class="property-title">
+                                <div>
+                                    <h3>Paris Luxury Apartments</h3>
+                                    <div class="property-location">
+                                        <i class="fas fa-map-marker-alt"></i> Montmartre, 1.2 miles from center
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="property-features">
+                                <span class="feature">Free WiFi</span>
+                                <span class="feature">Kitchen</span>
+                                <span class="feature">Washing machine</span>
+                                <span class="feature">Air conditioning</span>
+                            </div>
+                            <div class="property-description">
+                                <p>Modern apartments with stunning views of the city. Each unit features a fully equipped kitchen and spacious living area. Perfect for families or extended stays.</p>
+                            </div>
+                            <div class="property-price">
+                                <div class="price">$178</div>
+                                <div class="includes">Includes taxes and fees</div>
+                                <a href="#" class="btn">See availability</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="property-card">
+                        <div class="property-image">
+                            <img src="https://via.placeholder.com/300x200" alt="Boutique Hotel">
+                            <span class="rating">9.5</span>
+                        </div>
+                        <div class="property-details">
+                            <div class="property-title">
+                                <div>
+                                    <h3>Champs-Élysées Boutique Hotel</h3>
+                                    <div class="property-location">
+                                        <i class="fas fa-map-marker-alt"></i> Champs-Élysées, 0.3 miles from center
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="property-features">
+                                <span class="feature">Free WiFi</span>
+                                <span class="feature">Spa</span>
+                                <span class="feature">Fitness center</span>
+                                <span class="feature">Room service</span>
+                            </div>
+                            <div class="property-description">
+                                <p>Luxurious boutique hotel located on the famous Champs-Élysées. Offering elegant rooms with modern amenities, a spa center, and an on-site restaurant serving French cuisine.</p>
+                            </div>
+                            <div class="property-price">
+                                <div class="price">$295</div>
+                                <div class="includes">Includes taxes and fees</div>
+                                <a href="#" class="btn">See availability</a>
+                                <div class="availability">Limited availability!</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="property-card">
+                        <div class="property-image">
+                            <img src="https://via.placeholder.com/300x200" alt="Budget Hotel">
+                            <span class="rating">7.9</span>
+                        </div>
+                        <div class="property-details">
+                            <div class="property-title">
+                                <div>
+                                    <h3>Paris Budget Inn</h3>
+                                    <div class="property-location">
+                                        <i class="fas fa-map-marker-alt"></i> Latin Quarter, 2.1 miles from center
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="property-features">
+                                <span class="feature">Free WiFi</span>
+                                <span class="feature">24-hour front desk</span>
+                                <span class="feature">Family rooms</span>
+                            </div>
+                            <div class="property-description">
+                                <p>Affordable accommodation in the lively Latin Quarter. Simple, clean rooms with essential amenities. Great base for exploring the city on a budget.</p>
+                            </div>
+                            <div class="property-price">
+                                <div class="price">$89</div>
+                                <div class="includes">Includes taxes and fees</div>
+                                <a href="#" class="btn">See availability</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <a href="#" class="active">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a>
+                        <a href="#">5</a>
+                        <a href="#">Next</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>About</h3>
+                    <ul>
+                        <li><a href="#">How we work</a></li>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Investor relations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Help</h3>
+                    <ul>
+                        <li><a href="#">Support Center</a></li>
+                        <li><a href="#">Safety Resource Center</a></li>
+                        <li><a href="#">Cancellation options</a></li>
+                        <li><a href="#">COVID-19 response</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Partners</h3>
+                    <ul>
+                        <li><a href="#">Partner with us</a></li>
+                        <li><a href="#">Advertise with us</a></li>
+                        <li><a href="#">Affiliates</a></li>
+                        <li><a href="#">Partner hub</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Apps</h3>
+                    <ul>
+                        <li><a href="#">iOS App</a></li>
+                        <li><a href="#">Android App</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                Copyright &copy; 2023 TravelEase. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Price range slider
+        const priceRange = document.getElementById('priceRange');
+        const priceValue = document.getElementById('priceValue');
+        
+        if (priceRange && priceValue) {
+            priceRange.addEventListener('input', function() {
+                priceValue.textContent = this.value;
+            });
+        }
+        
+        // Filter toggle for mobile
+        const addFilterToggle = () => {
+            const filtersSection = document.querySelector('.filters');
+            const filtersTitle = filtersSection.querySelector('h3');
+            
+            if (window.innerWidth <= 992) {
+                filtersTitle.innerHTML = 'Filter by: <span class="toggle-icon">+</span>';
+                filtersTitle.style.cursor = 'pointer';
+                
+                const filterGroups = document.querySelectorAll('.filter-group');
+                filterGroups.forEach(group => {
+                    group.style.display = 'none';
+                });
+                
+                filtersTitle.addEventListener('click', function() {
+                    const icon = this.querySelector('.toggle-icon');
+                    const filterGroups = document.querySelectorAll('.filter-group');
+                    
+                    filterGroups.forEach(group => {
+                        if (group.style.display === 'none' || !group.style.display) {
+                            group.style.display = 'block';
+                            icon.textContent = '-';
+                        } else {
+                            group.style.display = 'none';
+                            icon.textContent = '+';
+                        }
+                    });
+                });
+            }
+        };
+        
+        // Call the function when the page loads
+        window.addEventListener('load', addFilterToggle);
+        // Call the function when the window is resized
+        window.addEventListener('resize', addFilterToggle);
+    </script>
+</body>
+</html> 

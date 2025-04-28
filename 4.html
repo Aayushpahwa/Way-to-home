@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Comparison</title>
+    <style>
+        body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("10466375.jpg"); /* Replace with your image path */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent repeating the image */
+}
+        header {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navigation a:hover {
+    color: #ffc107;
+}
+
+.search-bar {
+    display: flex;
+    gap: 10px;
+}
+
+.search-bar input {
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+}
+
+.search-bar button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #ffc107;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-bar button:hover {
+    background-color: #e0a800;
+}
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            color: #ddd;
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        .search-form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .search-form input, .search-form select, .search-form button {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .results-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .result-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .result-card h3 {
+            margin-top: 0;
+        }
+
+        .result-card .price {
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .result-card .rating {
+            color: #ffc107;
+        }
+        .result-card button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    background-color: #007bff;
+    color: white;
+    /*padding: 10px 0;Reduced padding */
+    text-align: center;
+    margin-top: auto; /* Pushes footer to the bottom */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center; /* Center items vertically */
+    flex-wrap: wrap;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.footer-links, .social-media {
+    margin: 5px; /* Reduced margin */
+}
+
+.footer-links h3, .social-media h3 {
+    margin-bottom: 5px; /* Reduced margin */
+    font-size: 16px; /* Reduced font size */
+}
+
+.footer-links ul, .social-media ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links a, .social-media a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 14px; /* Reduced font size */
+}
+
+.footer-links a:hover, .social-media a:hover {
+    color: #ffc107;
+}
+
+.copyright {
+    margin-top: 10px; /* Reduced margin */
+    font-size: 12px; /* Reduced font size */
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>Way to Home</h1>
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="8.html">About</a></li>
+                    <li><a href="5.html">Services</a></li>
+                    <li><a href="6.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+                <button type="button">Search</button>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <h1>Way to Home</h1>
+
+        <form class="search-form">
+            <input type="text" placeholder="Departure Location" id="departure">
+            <input type="text" placeholder="Arrival Location" id="arrival">
+            <input type="date" id="date">
+            <select id="mode">
+                <option value="all">All Modes</option>
+                <option value="bus">Bus</option>
+                <option value="train">Train</option>
+                <option value="flight">Flight</option>
+            </select>
+            <button type="button" onclick="search()">Search</button>
+        </form>
+
+        <div class="results-container" id="results">
+            </div>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="social-media">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="https://facebook.com" target="_blank">Facebook</a></li>
+                    <li><a href="https://twitter.com" target="_blank">Twitter</a></li>
+                    <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+                    <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+                </ul>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Way to home. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    
+
+    <script>
+        function search() {
+            const departure = document.getElementById('departure').value;
+            const arrival = document.getElementById('arrival').value;
+            const date = document.getElementById('date').value;
+            const mode = document.getElementById('mode').value;
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = ''; // Clear previous results
+
+            // Simulate fetching data (replace with actual API calls)
+            const simulatedResults = [
+                { provider: 'Provider A', price: '$50', rating: '4.5', reliability: 'High', link: 'https://example.com/providerA' },
+                { provider: 'Provider B', price: '$60', rating: '4.0', reliability: 'Medium', link: 'https://example.com/providerB' },
+                { provider: 'Provider C', price: '$45', rating: '4.8', reliability: 'High', link: 'https://example.com/providerC' }
+            ];
+
+            simulatedResults.forEach(result => {
+                const card = document.createElement('div');
+                card.className = 'result-card';
+                card.innerHTML = `
+                    <h3>${result.provider}</h3>
+                    <p class="price">${result.price}</p>
+                    <p class="rating">Rating: ${result.rating}</p>
+                    <p>Reliability: ${result.reliability}</p>
+                    <button onclick="window.location.href='${result.link}'">Book Now</button>
+                `;
+                resultsDiv.appendChild(card);
+            });
+        }
+    </script>
+</body>
+</html>

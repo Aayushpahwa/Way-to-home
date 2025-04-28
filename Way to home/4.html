@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Comparison</title>
+    <link rel="stylesheet" href="project.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>Way to Home</h1>
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="5.html">Services</a></li>
+                    <li><a href="6.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+                <button type="button">Search</button>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <h1>Way to Home</h1>
+
+        <form class="search-form">
+            <input type="text" placeholder="Departure Location" id="departure">
+            <input type="text" placeholder="Arrival Location" id="arrival">
+            <input type="date" id="date">
+            <select id="mode">
+                <option value="all">All Modes</option>
+                <option value="bus">Bus</option>
+                <option value="train">Train</option>
+                <option value="flight">Flight</option>
+            </select>
+            <button type="button" onclick="search()">Search</button>
+        </form>
+
+        <div class="results-container" id="results">
+            </div>
+    </div>
+                <footer>
+                    <div class="footer-container">
+                        <div class="footer-content">
+                            <a href="#home">Home</a>
+                            <a href="#about">About</a>
+                            <a href="#services">Services</a>
+                            <a href="#contact">Contact</a>
+                            <span class="separator">|</span>
+                            <a href="https://facebook.com" target="_blank">Facebook</a>
+                            <a href="https://twitter.com" target="_blank">Twitter</a>
+                            <a href="https://instagram.com" target="_blank">Instagram</a>
+                        </div>
+                        <div class="copyright">
+                            <small>&copy; 2025 Way to home</small>
+                        </div>
+                    </div>
+                </footer>
+
+    
+
+    <script>
+        function search() {
+            const departure = document.getElementById('departure').value;
+            const arrival = document.getElementById('arrival').value;
+            const date = document.getElementById('date').value;
+            const mode = document.getElementById('mode').value;
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = ''; // Clear previous results
+
+            // Simulated data for each mode (prices in rupees)
+            const travelData = {
+                bus: [
+                    { provider: 'RedBus', price: 300, rating: '4.2', reliability: 'High', link: '#' },
+                    { provider: 'Paytm Bus', price: 280, rating: '4.0', reliability: 'Medium', link: '#' }
+                ],
+                train: [
+                    { provider: 'IRCTC', price: 200, rating: '4.5', reliability: 'High', link: '#' },
+                    { provider: 'Yatra Train', price: 220, rating: '4.1', reliability: 'Medium', link: '#' }
+                ],
+                flight: [
+                    { provider: 'IndiGo', price: 1200, rating: '4.7', reliability: 'High', link: '#' },
+                    { provider: 'Air India', price: 1100, rating: '4.3', reliability: 'Medium', link: '#' }
+                ]
+            };
+
+            // Gather results based on selected mode
+            let results = [];
+            if (mode === 'all') {
+                Object.keys(travelData).forEach(m => {
+                    results = results.concat(travelData[m].map(r => ({ ...r, mode: m })));
+                });
+            } else {
+                results = travelData[mode].map(r => ({ ...r, mode }));
+            }
+
+            // Sort by price (ascending)
+            results.sort((a, b) => a.price - b.price);
+
+            // Create a transparent comparison table
+            let tableHTML = `
+                <h2 style="color:#fff;text-align:center;">Price Comparison</h2>
+                <table style="
+                    width:100%;
+                    background:rgba(255,255,255,0.15);
+                    color:#fff;
+                    border-radius:15px;
+                    overflow:hidden;
+                    box-shadow:0 8px 32px 0 rgba(31,38,135,0.37);
+                    backdrop-filter: blur(8px);
+                    border-collapse: separate;
+                    border-spacing: 0;
+                    margin-bottom: 20px;
+                ">
+                    <thead>
+                        <tr style="background:rgba(0,0,0,0.25);">
+                            <th style="padding:12px;">Mode</th>
+                            <th style="padding:12px;">Provider</th>
+                            <th style="padding:12px;">Price (₹)</th>
+                            <th style="padding:12px;">Rating</th>
+                            <th style="padding:12px;">Reliability</th>
+                            <th style="padding:12px;">Book</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+            results.forEach(result => {
+                tableHTML += `
+                    <tr style="background:rgba(255,255,255,0.10);">
+                        <td style="text-transform:capitalize; padding:10px;">${result.mode}</td>
+                        <td style="padding:10px;">${result.provider}</td>
+                        <td style="padding:10px;">₹${result.price}</td>
+                        <td style="padding:10px;">${result.rating}</td>
+                        <td style="padding:10px;">${result.reliability}</td>
+                        <td style="padding:10px;">
+                            <button style="
+                                background:rgba(255,107,107,0.8);
+                                color:#fff;
+                                border:none;
+                                border-radius:20px;
+                                padding:8px 18px;
+                                cursor:pointer;
+                                font-weight:600;
+                                transition:background 0.3s;
+                            " 
+                            onmouseover="this.style.background='rgba(255,135,135,0.9)'"
+                            onmouseout="this.style.background='rgba(255,107,107,0.8)'"
+                            onclick="window.location.href='${result.link}'">Book Now</button>
+                        </td>
+                    </tr>
+                `;
+            });
+            tableHTML += `
+                    </tbody>
+                </table>
+            `;
+
+            resultsDiv.innerHTML = tableHTML;
+        }
+    </script>
+</body>
+</html>
